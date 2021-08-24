@@ -58,6 +58,7 @@ def wordInCommands(word):
         return False
 
 def verifyInstructions(instruction):
+    """Verifica que las instrucciones ingresadas sean correctas"""
     print("INICIO DE LA VERIFICACIÓN")
     word = "" # Formación de comandos
     for letter in instruction: #Recorremos cada una de las instrucciones
