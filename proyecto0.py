@@ -60,11 +60,11 @@ def wordInCommands(word):
 def verifyInstructions(instruction):
     """Verifica que las instrucciones ingresadas sean correctas"""
     print("INICIO DE LA VERIFICACIÓN")
-    lookInstruction = False
-    validInstruction = True
+    lookInstruction = False # Centinela que espera la instrucción del LOOK
+    validInstruction = True # Centinela que comprueba si el conjunto de instrucciones es correcto
     word = "" # Formación de comandos
     for char in instruction: #Recorremos cada una de las instrucciones
-        if word == "LOOK":
+        if word == "LOOK": #Verifica si el comando es LOOK
             lookInstruction = True
         if word in lookCommands.keys():
             lookInstruction = False
