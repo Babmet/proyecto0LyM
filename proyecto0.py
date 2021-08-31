@@ -57,12 +57,11 @@ def wordInCommands(word):
 
 def verifyInstructions():
     """Verifica que las instrucciones ingresadas sean correctas"""
-    instructionsList = ""
+    instructionsList = "" #String que contiene todas las instrucciones leídas en el archivo de texto
     filename = input("Ingrese el nombre del archivo a leer (incluya la extensión): \n")
-    with open(filename,"r") as file:
+    with open(filename,"r") as file: #Lectura el archivo de texto
         for line in file:
-            instructionsList += line
-    print(instructionsList)
+            instructionsList += line #Se añade cada línea leída al String que contiene todo
     print("INICIO DE LA VERIFICACIÓN")
     lookInstruction = False # Centinela que espera la instrucción del LOOK
     validInstruction = True # Centinela que comprueba si el conjunto de instrucciones es correcto
@@ -81,8 +80,6 @@ def verifyInstructions():
         if char == " " or char == "\n": #Indica el separador
             result = wordInCommands(word)
             if result:
-                #print(word)
-                #print(result)
                 word = ""
             else:
                 word = ""
