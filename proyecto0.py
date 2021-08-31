@@ -48,8 +48,6 @@ specialChars = {
     ":" : 0
 }
 
-instruction = input("Ingrese la serie de instrucciones a verificar: \n")
-
 def wordInCommands(word):
     """Verifica si una instrucción se encuentra dentro de la lista de comandos."""
     if word in commands.keys():
@@ -57,13 +55,19 @@ def wordInCommands(word):
     else:
         return False
 
-def verifyInstructions(instruction):
+def verifyInstructions():
     """Verifica que las instrucciones ingresadas sean correctas"""
+    instructionsList = ""
+    filename = input("Ingrese el nombre del archivo a leer (incluya la extensión): \n")
+    with open(filename,"r") as file:
+        for line in file:
+            instructionsList += line
+    print(instructionsList)
     print("INICIO DE LA VERIFICACIÓN")
     lookInstruction = False # Centinela que espera la instrucción del LOOK
     validInstruction = True # Centinela que comprueba si el conjunto de instrucciones es correcto
     word = "" # Formación de comandos
-    for char in instruction: #Recorremos cada una de las instrucciones
+    for char in instructionsList: #Recorremos cada una de las instrucciones
         if word == "LOOK": #Verifica si el comando es LOOK
             lookInstruction = True
         if word in lookCommands.keys():
@@ -102,4 +106,4 @@ def verifyInstructions(instruction):
     else:
         print("La instrucción ingresada no es válida.")
 
-verifyInstructions(instruction)
+verifyInstructions()
