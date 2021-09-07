@@ -1,3 +1,11 @@
+""" 
+Integrantes:
+ - Leandro Yara
+ - Germán Rojas
+
+Sección 01
+ """
+
 # Lista de comandos aceptados por el robot
 commands = {
     'MOVE' : True,
@@ -151,7 +159,7 @@ def verifyInstructions():
     else:
         validInstruction = False
 
-    # Veridicamos si la instrucción fue correcta o no
+    # Verificamos si la instrucción fue correcta o no
     if validInstruction:
         print("La instrucción ingresada es correcta.")
     else:
