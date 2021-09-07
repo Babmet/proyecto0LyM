@@ -107,6 +107,15 @@ def verifyInstructions():
                 validInstruction = False
             else: #Si lo son, se agrega la variable al diccionario
                 definedVariables[variable] = value
+        if word == "CHECK": #Revisa la instruccion de revisar
+            tipo = instructionsList[actualPosition + 1]
+            value = instructionsList[actualPosition + 2]
+            if (tipo != "C" and tipo != "B") or integerValue(value) == False: #Revisa si no son correctos los parametros
+                validInstruction = False
+        if word == "IF":
+            next = instructionsList[actualPosition + 1]
+            if next != "BLOCKEDP" and next != "!BLOCKEDP":
+                validInstruction = False
         if word == "TO":
             if type(instructionsList[actualPosition + 1]) == str: #Si la funcion tiene un nombre en string asignado, comienza la verificación
                 followup = True
