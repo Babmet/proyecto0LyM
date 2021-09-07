@@ -116,6 +116,10 @@ def verifyInstructions():
             next = instructionsList[actualPosition + 1]
             if next != "BLOCKEDP" and next != "!BLOCKEDP":
                 validInstruction = False
+        if word == "REPEAT":
+            next = instructionsList[actualPosition + 1]
+            if next.isdigit() == False:
+                validInstruction = False
         if word == "TO":
             if type(instructionsList[actualPosition + 1]) == str: #Si la funcion tiene un nombre en string asignado, comienza la verificación
                 followup = True
